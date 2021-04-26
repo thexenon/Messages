@@ -36,8 +36,9 @@
 		};
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
-			var count = 0;
-      </script>
+			var counter = 100000000000;
+	  </script>
+	  
       
     <div class="brand">
         <h2>The <br>Interview<br> Hour</h2>
@@ -74,7 +75,7 @@
 			var databaseRef = firebase.database().ref().child("Interview Hour");
 			var blogData = {
 				"anon": msg,
-				"count": dateStr,
+				"count": counter,
 			};
 	
 			var newPostRef = databaseRef.push();
@@ -84,6 +85,7 @@
 									$("#result").attr("class", "alert alert-success");
 									$("#result").html("Message has been uploaded successfully...!");
 									$("#bd-wish")[0].reset();
+									counter--
 									
 								} else {
 									$("#result").attr("class", "alert alert-danger");
