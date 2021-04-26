@@ -70,6 +70,7 @@ img {
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
+    color: white;
 }
 button {
     width: 85%;
@@ -81,6 +82,7 @@ button {
     border: 0;
     outline: none;
     border-radius: 30px;
+    color: white;
 }
 button i{
     color: blueviolet 
