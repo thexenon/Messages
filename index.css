@@ -2,6 +2,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 @keyframes bouncing {
     0% {bottom: 0; box-shadow: 0 0 rgba(0, 0, 0, 0.1); }
@@ -84,7 +85,7 @@ button {
     border-radius: 30px;
     color: white;
 }
-button i{
+button i {
     color: blueviolet 
     padding: 8px;
 }
@@ -99,6 +100,6 @@ button i{
 .log-head h2 {
     animation: coloring 10s linear 0s infinite alternate both;
 }
-hr {
+.hr-class {
     border: 5px solid black;
 }

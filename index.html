@@ -36,7 +36,8 @@
 		};
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
-			var counter = 100000000000;
+
+		var counter = 0;
 	  </script>
 	  
       
@@ -56,7 +57,7 @@
 			<div id="result"></div>
 			</div>
 		</div>
-	</div><br><br><br><br><hr><br><br><br><!--
+	</div><br><br><br><hr class="hr-class"><br><br><br><!--
 	<div>
 		<h2 class="survey">
 			<a href="https://docs.google.com/forms/d/e/1FAIpQLSetDcEG7TvylMQyQ9iXA61ZVYLq2POyvSLSMu_CkKXLqjq8ug/viewform?usp=sf_link" target="_blank">
@@ -64,7 +65,7 @@
 				<i class="fas fa-hand-peace" style="padding: 0 10px;"></i>
 			</a>
 		</h2>
-	</div>--><br><br><br><hr><br>
+	</div>--><br><br><hr class="hr-class"><br>
 
 
 
@@ -72,10 +73,19 @@
 		$("#save-msg").click(function(){
 			var msg = $("#bd-msg").val();
 			var dateStr = new Date().getTime();
+			var time = new Time();
+            var option = {
+                       weekday: "long",
+                       month: "long",
+                       day: "2-digit",
+					   year: "numeric",
+			}
 			var databaseRef = firebase.database().ref().child("Interview Hour");
 			var blogData = {
 				"anon": msg,
-				"count": counter,
+				"count": 10000000000 - counter,
+                "time": time.toLocaleString('en-US', {hours: 'numeric', minutes: 'numeric', seconds: 'numeric', hours12: true}),
+                "date": time.toLocaleDateString('en-US', option),
 			};
 	
 			var newPostRef = databaseRef.push();
@@ -85,7 +95,7 @@
 									$("#result").attr("class", "alert alert-success");
 									$("#result").html("Message has been uploaded successfully...!");
 									$("#bd-wish")[0].reset();
-									counter--
+									
 									
 								} else {
 									$("#result").attr("class", "alert alert-danger");
@@ -105,7 +115,7 @@
 			if (blogs.exists()){
 				var blogsHtml = "";
 				blogs.forEach(function(singleBlog){
-					count = count - 1;
+					counter = counter + 1;
 					blogsHtml += "<div>"
 						blogsHtml += "<p style='border: 2px solid black; border-radius: 30px; width: 90%; background: linear-gradient(to right, green, white);padding: 20px; font-size: 1.2em; min-height: 100px; position: relative; margin: 2% auto; color='black''>"
 							blogsHtml += singleBlog.val().anon
