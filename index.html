@@ -37,7 +37,7 @@
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
 
-		var counter = 0;
+		var counter = 100000000000000000;
 	  </script>
 	  
       
@@ -83,7 +83,7 @@
 			var databaseRef = firebase.database().ref().child("Interview Hour");
 			var blogData = {
 				"anon": msg,
-				"count": 10000000000 - counter,
+				"count": counter - dateStr,
                 "time": time.toLocaleString('en-US', {hours: 'numeric', minutes: 'numeric', seconds: 'numeric', hours12: true}),
                 "date": time.toLocaleDateString('en-US', option),
 			};
