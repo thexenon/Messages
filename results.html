@@ -23,7 +23,6 @@
 	
 
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 	<script>
@@ -74,15 +73,13 @@
 								blogsHtml += singleBlog.val().anon
 						blogsHtml += "</p>"
 
-						blogsHtml += "<div class= 'row'>"
-							blogsHtml += "<div class= 'col-sm-4' style='font-size:0.7rem;'>"
-								blogsHtml += singleBlog.val().date
-							blogsHtml += "</div>"
-							blogsHtml += "<br><br><span class= 'col-sm-5' style='font-size:0.7rem'> &copy; The Interview Hour - Team Miracle &trade;</span>"
-							blogsHtml += "<br><div  class= 'col-sm-3' style='font-size:0.7rem;'>"
-								blogsHtml += singleBlog.val().time
-							blogsHtml += "</div>"
-						blogsHtml += "</div>"
+						blogsHtml += "<br><span style='font-size:0.7rem;'>"
+							blogsHtml += singleBlog.val().date
+						blogsHtml += "</span><br>"
+						blogsHtml += "<span style='font-size:0.7rem'> &copy; The Interview Hour - Team Miracle &trade;</span>"
+						blogsHtml += "<br><span style='font-size:0.7rem;'>"
+							blogsHtml += singleBlog.val().time
+						blogsHtml += "</span>"
 					blogsHtml += "</div>"
 					
 					$("#msg-log").html(blogsHtml);

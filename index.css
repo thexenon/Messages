@@ -2,7 +2,6 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 @keyframes bouncing {
     0% {bottom: 0; box-shadow: 0 0 rgba(0, 0, 0, 0.1); }
